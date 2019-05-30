@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {2}{Entendiendo los objetos en R (Todo es un objeto)}{8}{0}{2}
+\beamer@sectionintoc {3}{Usando R (Toda acci\IeC {\'o}n es resultado del llamado de una funci\IeC {\'o}n)}{22}{0}{3}
+\beamer@sectionintoc {4}{Impportando y exportando datos}{33}{0}{4}
+\beamer@sectionintoc {5}{Filtrado de datos}{37}{0}{5}

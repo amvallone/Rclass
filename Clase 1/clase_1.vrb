@@ -1,0 +1,36 @@
+\frametitle{Filtrando información}
+\protect\hypertarget{filtrando-informacion-2}{}
+
+\begin{block}{¿Cúales celdas contienen datos con autos con 6 cilindros?}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{which}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{cyl}\OperatorTok{==}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1  2  4  6 10 11 30
+\end{verbatim}
+
+\end{block}
+
+\begin{block}{Realice una tabla cruzada de los autos tiendo en cuenta la
+cantidad de cilindros y el número de carburadores.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{table}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{cyl,mtcars}\OperatorTok{$}\NormalTok{carb)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##
+##     1 2 3 4 6 8
+##   4 5 6 0 0 0 0
+##   6 2 0 0 4 1 0
+##   8 0 4 3 6 0 1
+\end{verbatim}
+
+\end{block}
+
