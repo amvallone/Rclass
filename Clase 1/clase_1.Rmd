@@ -7,7 +7,7 @@ output:
     keep_tex: no
     slide_level: 2
     incremental: no
-    toc: yes
+    toc: true
     includes:
       in_header: header.tex
 fontsize: 10pt
@@ -36,7 +36,7 @@ options(repos=c(CRAN="Chile"))
 
 - Todos los códigos de R son ejecutados en la consola.
 -Es posible guardar un *sesión* de R, pero es recomendable guardar todo en un *script*
-- *script* es un archivo de texto plano cm la extensión *.R* que permite replicar operaciones en R.
+- Un *script* es un archivo de texto plano cm la extensión *.R* que permite replicar operaciones en R.
 \begin{center}
 \includegraphics[width=4in]{./clase1_files/Rstudio1.png}
 \end{center}
@@ -45,7 +45,7 @@ options(repos=c(CRAN="Chile"))
 
 - Todos los códigos de R son ejecutados en la consola.
 -Es posible guardar un *sesión* de R, pero es recomendable guardar todo en un *script*
-- *script* es un archivo de texto plano con la extensión *.R* que permite replicar operaciones en R.
+-Un  *script* es un archivo de texto plano con la extensión *.R* que permite replicar operaciones en R.
 \begin{center}
 \includegraphics[width=3.2in]{./clase1_files/Rstudio2.png}
 \end{center}
@@ -63,7 +63,7 @@ options(repos=c(CRAN="Chile"))
 # Entendiendo los objetos en R (Todo es un objeto)
 
 ## Tipos de Datos en R
-- Todos los objetos en R están construidos a partir de estos tres tipo de *objetos atómicos
+- Todos los objetos en R están construidos a partir de estos tres tipo de *objetos atómicos* básicos.
 
 ::: {.block}
 ### Objetos Atómicos
@@ -254,7 +254,7 @@ h[-2]
 ```{r, echo=TRUE}
 x <- c(2,1,8,3)
 y <- c(9,4)
-x+y # Element of y is recycled to 9,4,9,4 [1]11 517 7
+x+y # Element of y is recycled to 9,4,9,4
 x-1 # Scalar 1 is recycled to 1,1,1,1
 ```
 
@@ -428,7 +428,7 @@ dir()
 ## Usando los paquetes en R
 - Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
 - Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
-- Hay mas de  paquetes en el Comprehensive R Archive Network o CRAN.
+- Hay 14307 paquetes disponibles en el Comprehensive R Archive Network o CRAN.
 \begin{center}
 \includegraphics[width=3.2in]{./clase1_files/pgk.png}
 \end{center}
@@ -438,7 +438,7 @@ dir()
 ## Usando los paquetes en R
 - Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
 - Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
-- Hay mas de  paquetes en el Comprehensive R Archive Network o CRAN.
+- Hay 14307 paquetes disponibles en el Comprehensive R Archive Network o CRAN.
 - Un paquete contiene las funciones, su documentación (archivos de ayuda) y las *vignettes* (guía de uso)
 - Es necesario instalar los paquetes para usarlos.
 
