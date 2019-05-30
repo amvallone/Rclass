@@ -322,8 +322,8 @@ x-1 # Scalar 1 is recycled to 1,1,1,1
 ```{r,echo=TRUE,results="hide"}
 mean(x, na.rm=FALSE)
 ```
-- Las unciones tiene argumentos con nombre (*tagged*), por ejemplo `na.rm` que asmen valores por defecto 
-- Los argumentos sin nombre se valores posicionales (*positional*) y por lo general represetan el vector de datos al que se dea aplicar la función.
+- Las unciones tiene argumentos con nombre (*tagged*), por ejemplo `na.rm` que asomen valores por defecto 
+- Los argumentos sin nombre se valores preposicionales (*positional*) y por lo general representan el vector de datos al que se desea aplicar la función.
 
 ## Ejemplo de función
 ### función `hist()`
@@ -344,15 +344,15 @@ mean(x, na.rm=FALSE)
 
 ## Usando las Funciones
 
-- Toda acción en R se produce a través de la ejecucion de una función.
+- Toda acción en R se produce a través de la ejecución de una función.
 - Las funciones se componen dos elementos: **nombre** y **argumentos**
 ```{r,echo=TRUE,results="hide"}
 mean(x, na.rm=FALSE)
 ```
-- Las unciones tiene argumentos con nombre (*tagged*), por ejemplo `na.rm` que asmen valores por defecto 
-- Los argumentos sin nombre se valores posicionales (*positional*) y por lo general represetan el vector de datos al que se dea aplicar la función.
-- Los operadores básicos son funciones, por ejeplo `x + y` puede ser ejcutado como `'+'(x,y)`
-- Los operados básicos se pueden combinar con las funciones y se ejecuta como de manera semejante a la resolución matematica.
+- Las unciones tiene argumentos con nombre (*tagged*), por ejemplo `na.rm` que asomen valores por defecto 
+- Los argumentos sin nombre se valores preposicionales (*positional*) y por lo general representan el vector de datos al que se desea aplicar la función.
+- Los operadores básicos son funciones, por ejemplo `x + y` puede ser ejecutado como `'+'(x,y)`
+- Los operados básicos se pueden combinar con las funciones y se ejecuta como de manera semejante a la resolución matemática.
 ```{r, echo=TRUE, results="hide"}
 x <- c(2,1,8,3)
 y <- 2 * (0.5 + log(x))
@@ -426,8 +426,8 @@ dir()
 
 
 ## Usando los paquetes en R
-- Los paquetes son la unidad fundamental del codigo compartido en R (Wickham, 2015)
-- Los paquets contienen funciones que permiten apmpliar la capacidad de realizar operaciones con R
+- Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
+- Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
 - Hay mas de  paquetes en el Comprehensive R Archive Network o CRAN.
 \begin{center}
 \includegraphics[width=3.2in]{./clase1_files/pgk.png}
@@ -436,14 +436,14 @@ dir()
 
 
 ## Usando los paquetes en R
-- Los paquetes son la unidad fundamental del codigo compartido en R (Wickham, 2015)
-- Los paquets contienen funciones que permiten apmpliar la capacidad de realizar operaciones con R
+- Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
+- Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
 - Hay mas de  paquetes en el Comprehensive R Archive Network o CRAN.
-- Un paquete contiene las funciones, su documentación (archivos de ayuda) y las *vignettes* (guia de uso)
+- Un paquete contiene las funciones, su documentación (archivos de ayuda) y las *vignettes* (guía de uso)
 - Es necesario instalar los paquetes para usarlos.
 
 ## Usando los paquetes en R
-- Para instalr un paquete se usa el siguiente código
+- Para instalar un paquete se usa el siguiente código
 ```{r,echo=TRUE,results="hide",warning=FALSE,eval=FALSE}
 install.packages("ggplot2") #install the ggplot package
 ```
@@ -459,7 +459,7 @@ library("sp")
 \end{center}
 
 ## Usando los paquetes en R
-- Existen paquetes que están en estado de desarrollo y se encuentran disponibles en repositorios publicos como [GitHub](https://github.com/)
+- Existen paquetes que están en estado de desarrollo y se encuentran disponibles en repositorios públicos como [GitHub](https://github.com/)
 \begin{center}
 \includegraphics[width=9cm]{./clase1_files/git.png}
 \end{center}
@@ -469,11 +469,11 @@ library("devtools")
 install_github("amvallone/estdaR")
 ```
 
-# Impportando y exportando datos
+# Importando y exportando datos
 
 ## Importando y exportando información
-- El proceso de importar y exporatar información depende del formato en que la información
-- Para importa y exportar es necesario entregar la informacion del *path* o configurar el directorio de trebajo
+- El proceso de importar y exportar información depende del formato en que la información
+- Para importa y exportar es necesario entregar la información del *path* o configurar el directorio de trabajo
 ```{r, echo=TRUE,eval=FALSE}
 setwd("path")
 getwd()
@@ -483,7 +483,7 @@ getwd()
 read.csv(file, header = TRUE, sep = ",", dec = ".", ...) 
 write.csv(x, file, , sep = ",", dec = ".", ...)
 ```
-- Para otrso tipos de archivos de texto plano pueden usarse las funcones `read.table()` o `read.delim()`
+- Para otro tipos de archivos de texto plano pueden usarse las funciones `read.table()` o `read.delim()`
 - Para `*.xlsx` es recomendable usar
 ```{r, echo=TRUE,eval=FALSE}
 library("openxlsx")
@@ -528,7 +528,7 @@ data <- raw_data[[3]]
 data(mtcars)
 carb4 <- mtcars[mtcars$carb==4, ] # cars with 4 carb.
 ```
-- Es posible realizar subconjuntos de datos qeu cumplan un conjunto de condiciones mediante la función `subset`
+- Es posible realizar subconjuntos de datos que cumplan un conjunto de condiciones mediante la función `subset`
 ```{r, echo=TRUE,results="hide"}
 carb4 <- subset(mtcars, mtcars$cyl==4)
 str(mtcars)
@@ -538,13 +538,13 @@ cyl <- mtcars$cyl #Extract the variable number of cylinders
 
 ## Filtrando información
 
-### ¿Cúantos autos tiene 4 cilindros?
+### ¿Cuántos autos tiene 4 cilindros?
 ```{r,echo=TRUE}
 cyl4 <- mtcars[mtcars$cyl==4, ]
 cyl4_1 <- subset(mtcars, cyl==4)
 ```
 
-### ¿Cuántos autos tienen 4 cilindors y mas de 90 caballos de fuerza?
+### ¿Cuántos autos tienen 4 cilindros y mas de 90 caballos de fuerza?
 \pause
 ```{r,echo=TRUE}
 cyl4_hp90 <- mtcars[mtcars$cyl==4 & mtcars$hp>90, ]
@@ -560,7 +560,7 @@ hp60_200_1 <- subset(mtcars,hp>200 | hp <60)
 
 ## Filtrando información
 
-### ¿Cúales celdas contienen datos con autos con 6 cilindros?
+### ¿Cuáles celdas contienen datos con autos con 6 cilindros?
 ```{r,echo=TRUE}
 which(mtcars$cyl==6)
 ```
