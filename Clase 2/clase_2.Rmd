@@ -1,0 +1,195 @@
+---
+title: "Introducción a R"
+author: "Andrés Vallone"
+date: "2019"
+output:
+  beamer_presentation:
+    keep_tex: no
+    slide_level: 2
+    incremental: no
+    toc: true
+    includes:
+      in_header: header.tex
+fontsize: 10pt
+classoption: compress
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+set.seed(100)
+options(repos=c(CRAN="Chile"))
+
+```
+
+# Repaso de la sesión anterior
+
+## Reapso de la sesión anterior
+- "todo en R es un objeto"
+  - Objetos atómicos:
+    - `numeric`
+    - `interger`
+    - `character`
+    - `LOGICAL`
+  - Estrcuturas bàsicas e indexación
+ \begin{tabular}{|l|r|}
+ \hline
+ Scalar & -\\
+ \hline
+ Vector & \verb|x[i]| \\
+ \hline
+ Matrix & \verb|x[i,j]| \\
+ \hline
+ Dataframe & \verb|x[i,j]| \\
+ \hline
+ List & \verb|x[[k]][i]| or \verb|x[[k]][i,j]| \\
+ \hline
+ \end{tabular}
+ - Operadores Básicos
+ - Usando funciones `nombre(argumentos)`
+ 
+   
+## Usando los paquetes en R
+- Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
+- Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
+- Hay 14307 paquetes disponibles en el Comprehensive R Archive Network o CRAN.
+\begin{center}
+\includegraphics[width=3.2in]{./files/pgk.png}
+\end{center}
+
+
+
+## Usando los paquetes en R
+- Los paquetes son la unidad fundamental del código compartido en R (Wickham, 2015)
+- Los paquetes contienen funciones que permiten ampliar la capacidad de realizar operaciones con R
+- Hay 14307 paquetes disponibles en el Comprehensive R Archive Network o CRAN.
+- Un paquete contiene las funciones, su documentación (archivos de ayuda) y las *vignettes* (guía de uso)
+- Es necesario instalar los paquetes para usarlos.
+
+## Usando los paquetes en R
+- Para instalar un paquete se usa el siguiente código
+```{r,echo=TRUE,results="hide",warning=FALSE,eval=FALSE}
+install.packages("ggplot2") #install the ggplot package
+```
+\begin{center}
+\includegraphics[width=4cm]{./files/ipkg.png}
+\end{center}
+- Una vez instalado se debe cargar el paquete para utilizarlo.
+```{r,echo=TRUE,results="hide",eval=FALSE}
+library("sp")
+```
+\begin{center}
+\includegraphics[width=6cm]{./files/lpkg.png}
+\end{center}
+
+## Usando los paquetes en R
+- Existen paquetes que están en estado de desarrollo y se encuentran disponibles en repositorios públicos como [GitHub](https://github.com/)
+\begin{center}
+\includegraphics[width=9cm]{./files/git.png}
+\end{center}
+- Es posible descargar e instalar estos paquetes para su uso utilizando el paquete `devtools`
+```{r, echo=TRUE,eval=FALSE}
+library("devtools")
+install_github("amvallone/estdaR")
+```
+
+# Importando y exportando datos
+
+## Importando y exportando información
+- El proceso de importar y exportar información depende del formato en que la información
+- Para importa y exportar es necesario entregar la información del *path* o configurar el directorio de trabajo
+```{r, echo=TRUE,eval=FALSE}
+setwd("path")
+getwd()
+```
+-Los archivos separados por comas `*.csv`
+```{r,echo=TRUE,eval=FALSE}
+read.csv(file, header = TRUE, sep = ",", dec = ".", ...) 
+write.csv(x, file, , sep = ",", dec = ".", ...)
+```
+- Para otro tipos de archivos de texto plano pueden usarse las funciones `read.table()` o `read.delim()`
+- Para `*.xlsx` es recomendable usar
+```{r, echo=TRUE,eval=FALSE}
+library("openxlsx")
+read.xlsx(file, sheet = 1, startRow = 1,...) 
+write.xlsx(x,file,...)
+```
+
+## Ejemplos de uso
+### Importando el archivo `mtcars.csv`
+```{r,echo=TRUE,eval=FALSE}
+data_cars <- read.csv("mtcars.csv", header=TRUE, sep=",")
+```
+### Importando el archivo `crime.txt`
+```{r,echo=TRUE,eval=FALSE}
+crime <- read.table("crime.txt",sep="\t",dec=".")
+```
+### Importando el archivo `muni17.xlsx`
+```{r,echo=TRUE,eval=FALSE}
+muni <- read.xlsx("muni17.xlsx")
+```
+
+
+## Otra forma de incorporar datos
+- Otra forma es descargando los datos desde la red, incluso si los datos no están estructurados es posibles importarlos a R
+- Nos interesa trabajar con la segunda tabla de datos de la [esta](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population) pagina de Wikipedia.
+
+### Ejemplo de web scraping
+```{r, echo=TRUE,eval=FALSE}
+url <- "https://en.wikipedia.org/wiki/List_of_states_
+       and_territories_of_the_United_States_by_population"
+require(rvest)
+raw_data <- html_table(read_html(url))
+data <- raw_data[[3]]
+```
+
+# Filtrado de datos
+
+## Filtrando información
+
+- La forma más sencilla de filtrar información es utilizando indexación.
+```{r,echo=TRUE}
+data(mtcars)
+carb4 <- mtcars[mtcars$carb==4, ] # cars with 4 carb.
+```
+- Es posible realizar subconjuntos de datos que cumplan un conjunto de condiciones mediante la función `subset`
+```{r, echo=TRUE,results="hide"}
+carb4 <- subset(mtcars, mtcars$cyl==4)
+str(mtcars)
+names(mtcars)
+cyl <- mtcars$cyl #Extract the variable number of cylinders
+```
+
+## Filtrando información
+
+### ¿Cuántos autos tiene 4 cilindros?
+```{r,echo=TRUE}
+cyl4 <- mtcars[mtcars$cyl==4, ]
+cyl4_1 <- subset(mtcars, cyl==4)
+```
+
+### ¿Cuántos autos tienen 4 cilindros y mas de 90 caballos de fuerza?
+\pause
+```{r,echo=TRUE}
+cyl4_hp90 <- mtcars[mtcars$cyl==4 & mtcars$hp>90, ]
+cyl4_hp90_1 <- subset(mtcars,cyl==4 & hp>90)
+```
+
+### ¿Cuantos autos tienen más de 200 y menos de 60 caballos de fuerza?
+\pause
+```{r,echo=TRUE}
+hp60_200 <- mtcars[mtcars$hp>200 | mtcars$hp <60, ]
+hp60_200_1 <- subset(mtcars,hp>200 | hp <60)
+```
+
+## Filtrando información
+
+### ¿Cuáles celdas contienen datos con autos con 6 cilindros?
+```{r,echo=TRUE}
+which(mtcars$cyl==6)
+```
+
+### Realice una tabla cruzada de los autos tiendo en cuenta la cantidad de cilindros y el número de carburadores.
+
+```{r,echo=TRUE}
+table(mtcars$cyl,mtcars$carb)
+```

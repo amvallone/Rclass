@@ -69,30 +69,8 @@
 \headcommand {\beamer@framepages {31}{31}}
 \headcommand {\slideentry {3}{0}{11}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\beamer@sectionpages {22}{32}}
+\headcommand {\beamer@partpages {1}{32}}
 \headcommand {\beamer@subsectionpages {22}{32}}
-\headcommand {\sectionentry {4}{Importando y exportando datos}{33}{Importando y exportando datos}{0}}
-\headcommand {\slideentry {4}{0}{1}{33/33}{}{0}}
-\headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {4}{0}{2}{34/34}{}{0}}
-\headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {4}{0}{3}{35/35}{}{0}}
-\headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {4}{0}{4}{36/36}{}{0}}
-\headcommand {\beamer@framepages {36}{36}}
-\headcommand {\beamer@sectionpages {33}{36}}
-\headcommand {\beamer@subsectionpages {33}{36}}
-\headcommand {\sectionentry {5}{Filtrado de datos}{37}{Filtrado de datos}{0}}
-\headcommand {\slideentry {5}{0}{1}{37/37}{}{0}}
-\headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {5}{0}{2}{38/38}{}{0}}
-\headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {5}{0}{3}{39/41}{}{0}}
-\headcommand {\beamer@framepages {39}{41}}
-\headcommand {\slideentry {5}{0}{4}{42/42}{}{0}}
-\headcommand {\beamer@framepages {42}{42}}
-\headcommand {\beamer@partpages {1}{42}}
-\headcommand {\beamer@subsectionpages {37}{42}}
-\headcommand {\beamer@sectionpages {37}{42}}
-\headcommand {\beamer@documentpages {42}}
-\headcommand {\gdef \inserttotalframenumber {39}}
+\headcommand {\beamer@sectionpages {22}{32}}
+\headcommand {\beamer@documentpages {32}}
+\headcommand {\gdef \inserttotalframenumber {31}}

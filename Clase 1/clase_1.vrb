@@ -1,36 +1,25 @@
-\frametitle{Filtrando información}
-\protect\hypertarget{filtrando-informacion-2}{}
+\frametitle{Usando los paquetes en R}
+\protect\hypertarget{usando-los-paquetes-en-r-3}{}
 
-\begin{block}{¿Cuáles celdas contienen datos con autos con 6 cilindros?}
+\begin{itemize}
+\tightlist
+\item
+  Existen paquetes que están en estado de desarrollo y se encuentran
+  disponibles en repositorios públicos como
+  \href{https://github.com/}{GitHub}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{which}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{cyl}\OperatorTok{==}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1]  1  2  4  6 10 11 30
-\end{verbatim}
-
-\end{block}
-
-\begin{block}{Realice una tabla cruzada de los autos tiendo en cuenta la
-cantidad de cilindros y el número de carburadores.}
+  \begin{center}
+  \includegraphics[width=9cm]{./clase1_files/git.png}
+  \end{center}
+\item
+  Es posible descargar e instalar estos paquetes para su uso utilizando
+  el paquete \texttt{devtools}
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{cyl,mtcars}\OperatorTok{$}\NormalTok{carb)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"devtools"}\NormalTok{)}
+\KeywordTok{install_github}\NormalTok{(}\StringTok{"amvallone/estdaR"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-##
-##     1 2 3 4 6 8
-##   4 5 6 0 0 0 0
-##   6 2 0 0 4 1 0
-##   8 0 4 3 6 0 1
-\end{verbatim}
-
-\end{block}
 
