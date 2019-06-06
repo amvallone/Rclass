@@ -2,12 +2,12 @@
 title: "Introducción a R"
 author: "Andrés Vallone"
 date: "2019"
+toctitle: "Contenidos"
 output:
   beamer_presentation:
     keep_tex: no
     slide_level: 2
     incremental: no
-    toc: true
     includes:
       in_header: header.tex
 fontsize: 10pt
@@ -20,6 +20,9 @@ set.seed(100)
 options(repos=c(CRAN="Chile"))
 
 ```
+
+## Contenidos
+\tableofcontents
 
 # Repaso de la sesión anterior
 
@@ -193,3 +196,29 @@ which(mtcars$cyl==6)
 ```{r,echo=TRUE}
 table(mtcars$cyl,mtcars$carb)
 ```
+
+## Filtrando información
+### ¿Cúal es la cilindrada media de los autos datdo el munero de caruradores?
+```{r,echo=TRUE}
+aggregate(cyl ~carb, mtcars, mean)
+```
+
+## Tarea
+
+### Desafio 1
+1. instale el pagquete `gapminder``
+2. Use la ayuda para ver como usar y que contiene la base `gapminder` 
+3. con¡mpruebe el tipo de dato de cada una de las variables de la base de datos
+4. escoja una de las variables y tranformela de su estado original a caracteres (consejo: utilice alguna variable no numerica)
+5. calcule la media del GDP per capita anual  para cada continente 
+\pause
+
+### Una posible solución
+```{r,echo=TRUE,eval=FALSE}
+install.packages("gapminder") 
+help(packages="gapmainder")
+str(gapminder) #también pude mirar la ventana del Global.
+cont <- as.character(gapminder$continent)
+aggregate(gdpPercap ~ year + continent, gapminder, mean )
+```
+

@@ -127,7 +127,7 @@ h[-2]
 ## ---- echo=TRUE----------------------------------------------------------
 x <- c(2,1,8,3)
 y <- c(9,4)
-x+y # Element of y is recycled to 9,4,9,4 [1]11 517 7
+x+y # Element of y is recycled to 9,4,9,4
 x-1 # Scalar 1 is recycled to 1,1,1,1
 
 
@@ -225,75 +225,4 @@ y <- 2 * (0.5 + log(x))
 ## ---- echo=TRUE,eval=FALSE-----------------------------------------------
 ## library("devtools")
 ## install_github("amvallone/estdaR")
-
-
-## ---- echo=TRUE,eval=FALSE-----------------------------------------------
-## setwd("path")
-## getwd()
-
-
-## ----echo=TRUE,eval=FALSE------------------------------------------------
-## read.csv(file, header = TRUE, sep = ",", dec = ".", ...)
-## write.csv(x, file, , sep = ",", dec = ".", ...)
-
-
-## ---- echo=TRUE,eval=FALSE-----------------------------------------------
-## library("openxlsx")
-## read.xlsx(file, sheet = 1, startRow = 1,...)
-## write.xlsx(x,file,...)
-
-
-## ----echo=TRUE,eval=FALSE------------------------------------------------
-## data_cars <- read.csv("mtcars.csv", header=TRUE, sep=",")
-
-
-## ----echo=TRUE,eval=FALSE------------------------------------------------
-## crime <- read.table("crime.txt",sep="\t",dec=".")
-
-
-## ----echo=TRUE,eval=FALSE------------------------------------------------
-## muni <- read.xlsx("muni17.xlsx")
-
-
-## ---- echo=TRUE,eval=FALSE-----------------------------------------------
-## url <- "https://en.wikipedia.org/wiki/List_of_states_
-##        and_territories_of_the_United_States_by_population"
-## require(rvest)
-## raw_data <- html_table(read_html(url))
-## data <- raw_data[[3]]
-
-
-## ----echo=TRUE-----------------------------------------------------------
-data(mtcars)
-carb4 <- mtcars[mtcars$carb==4, ] # cars with 4 carb.
-
-
-## ---- echo=TRUE,results="hide"-------------------------------------------
-carb4 <- subset(mtcars, mtcars$cyl==4)
-str(mtcars)
-names(mtcars)
-cyl <- mtcars$cyl #Extract the variable number of cylinders
-
-
-## ----echo=TRUE-----------------------------------------------------------
-cyl4 <- mtcars[mtcars$cyl==4, ]
-cyl4_1 <- subset(mtcars, cyl==4)
-
-
-## ----echo=TRUE-----------------------------------------------------------
-cyl4_hp90 <- mtcars[mtcars$cyl==4 & mtcars$hp>90, ]
-cyl4_hp90_1 <- subset(mtcars,cyl==4 & hp>90)
-
-
-## ----echo=TRUE-----------------------------------------------------------
-hp60_200 <- mtcars[mtcars$hp>200 | mtcars$hp <60, ]
-hp60_200_1 <- subset(mtcars,hp>200 | hp <60)
-
-
-## ----echo=TRUE-----------------------------------------------------------
-which(mtcars$cyl==6)
-
-
-## ----echo=TRUE-----------------------------------------------------------
-table(mtcars$cyl,mtcars$carb)
 

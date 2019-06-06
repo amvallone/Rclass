@@ -12,25 +12,24 @@
   \setbeamercolor{block title}{bg=ucn1,fg=white}
   \setbeamercolor{block title alerted}{bg=red,fg=white}
   \setbeamercolor*{structure}{fg=ucn2}
+  \setbeamercolor{title}{fg=white}
+\setbeamercolor*{subtitle}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
+\titlegraphic{\includegraphics[width=2cm]{./clase1_files/ucn.png}}
 
-	\defbeamertemplate*{title page}{customized}[1][]
-{
-	
-	\centering
-	
-	\vfill
-  	\begin{beamercolorbox}[wd=\paperwidth,ht=]{palette primary}
-   		 \centering  \usebeamerfont{title} \inserttitle
-     \end{beamercolorbox}
-	\vspace{1cm}
-	\includegraphics[width=1.5cm]{./clase1_files/ucn.png}\\
-   \vspace{1cm}
-   \bigskip
-   \insertauthor\par
-   \insertinstitute\par
-   \insertdate\par
- 
-}
+
+\makeatletter
+\def\ps@navigation@titlepage{%
+  % Add here all the changes you want to apply to the title page
+  \setbeamercolor{background canvas}{bg=ucn3}%  blue background
+  \@nameuse{ps@navigation}}
+
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+
+
   \institute{Escuela de Ciencias Empresariales}
   \addtobeamertemplate{frametitle}{}{%
 	\begin{tikzpicture}[remember picture,overlay]
@@ -43,13 +42,13 @@
  {\setbeamercolor{background canvas}{bg=ucn3}
  \setbeamercolor{title}{fg=white}
   \begin{frame}
-  \vfill
   \centering
+  \includegraphics[width=2cm]{./clase1_files/ucn.png}\\
+  \vfill
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
     \usebeamerfont{title}\secname\par%
   \end{beamercolorbox}
   \vfill
-  \includegraphics[width=2cm]{./clase1_files/ucn.png}\\
-  \vfill
+
   \end{frame}}
 }
