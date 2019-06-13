@@ -1,0 +1,53 @@
+\usepackage{multicol}
+\newcommand{\btwocol}{\begin{multicols}{2}}
+\newcommand{\ecol}{\end{multicols}}
+\newcommand{\bthreecol}{\begin{multicols}{3}}
+\usepackage{graphicx}
+\usepackage{tikz}
+\definecolor{ucn1}{RGB}{125, 155, 193}
+\definecolor{ucn2}{RGB}{184, 97, 37}
+\definecolor{ucn3}{RGB}{28, 55, 110}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{blocks}[shadow=true]
+  \setbeamercolor{block title}{bg=ucn1,fg=white}
+  \setbeamercolor{block title alerted}{bg=red,fg=white}
+  \setbeamercolor*{structure}{fg=ucn2}
+  \setbeamercolor{title}{fg=white}
+\setbeamercolor*{subtitle}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
+\titlegraphic{\includegraphics[width=2cm]{./files/ucn.png}}
+
+
+\makeatletter
+\def\ps@navigation@titlepage{%
+  % Add here all the changes you want to apply to the title page
+  \setbeamercolor{background canvas}{bg=ucn3}%  blue background
+  \@nameuse{ps@navigation}}
+
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+
+
+  \institute{Escuela de Ciencias Empresariales}
+  \addtobeamertemplate{frametitle}{}{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,yshift=-5pt] at (current page.north east) 	{\includegraphics[height=0.5cm]{./files/eciem.png}};
+	\end{tikzpicture}}			
+	\setbeamersize{text margin left=15pt,text margin right=15pt}		
+ % \logo{\includegraphics[height=0.6cm]{./clase1_files/eciem.png}}
+
+\AtBeginSection[]{
+ {\setbeamercolor{background canvas}{bg=ucn3}
+ \setbeamercolor{title}{fg=white}
+  \begin{frame}
+  \centering
+  \includegraphics[width=2cm]{./files/ucn.png}\\
+  \vfill
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\secname\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}}
+}
