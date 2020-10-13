@@ -469,11 +469,12 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
               + geom_point(aes(color=continent))
 
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))  
-               + geom_point(aes(color=continent)) + scale_x_log10()
+               + geom_point(aes(color=continent)) 
+               + scale_x_log10()
 
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))  
-              + geom_point(aes(color=continent)) + scale_x_log10()
-              + geom_smooth(method="lm")
+              + geom_point(aes(color=continent)) 
+              + scale_x_log10() + geom_smooth(method="lm")
 ```
 
 
